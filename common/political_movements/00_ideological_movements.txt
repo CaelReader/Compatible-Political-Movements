@@ -1391,9 +1391,7 @@ movement_labor = { # Explicitly non-socialist labour movement
 	
 	character_support_trigger = {
 		OR = {
-			has_ideology = ideology:ideology_reformer
-			has_ideology = ideology:ideology_radical
-			has_ideology = ideology:ideology_social_democrat
+			character_is_pro_labor_movement = yes #Compatibility Trigger
 			is_interest_group_type = ig_trade_unions
 		}
 	}
@@ -1710,10 +1708,7 @@ movement_socialist = {
 	
 	character_support_trigger = {
 		OR = {
-			has_ideology = ideology:ideology_communist
-			has_ideology = ideology:ideology_anarchist
-			has_ideology = ideology:ideology_social_democrat
-			has_ideology = ideology:ideology_vanguardist
+			character_is_pro_socialist_movement = yes
 			AND = {
 				is_interest_group_type = ig_trade_unions
 				has_ideology = ideology:ideology_humanitarian
@@ -3129,21 +3124,11 @@ movement_liberal = {
 			limit = {
 				is_in_exile_pool = yes
 			}
-			OR = {
-				has_ideology = ideology:ideology_market_liberal
-				has_ideology = ideology:ideology_liberal_leader
-				has_ideology = ideology:ideology_republican_leader
-				has_ideology = ideology:ideology_radical
-				has_ideology = ideology:ideology_humanitarian				
-			}
+			character_is_pro_liberal_movement = yes #Compatibility Trigger
 		}
 		trigger_else = {
 			OR = {
-				has_ideology = ideology:ideology_market_liberal
-				has_ideology = ideology:ideology_liberal_leader
-				has_ideology = ideology:ideology_republican_leader
-				has_ideology = ideology:ideology_radical
-				has_ideology = ideology:ideology_humanitarian
+				character_is_pro_liberal_movement = yes #Compatibility Trigger
 				interest_group ?= {
 					OR = {
 						has_ideology = ideology:ideology_liberal
@@ -3440,17 +3425,11 @@ movement_radical = {
 			limit = {
 				is_in_exile_pool = yes
 			}
-			OR = {
-				has_ideology = ideology:ideology_radical
-				has_ideology = ideology:ideology_atheist
-				has_ideology = ideology:ideology_republican_leader
-			}
+			character_is_pro_radical_movement = yes #Compatibility Trigger
 		}
 		trigger_else = {
 			OR = {
-				has_ideology = ideology:ideology_radical
-				has_ideology = ideology:ideology_atheist
-				has_ideology = ideology:ideology_republican_leader
+				character_is_pro_radical_movement = yes #Compatibility Trigger
 				interest_group ?= {
 					has_ideology = ideology:ideology_republican
 				}
@@ -3770,13 +3749,7 @@ movement_nihilist = {
 	}
 	
 	character_support_trigger = {
-		OR = {
-			has_ideology = ideology:ideology_atheist
-			has_ideology = ideology:ideology_positivist
-			has_ideology = ideology:ideology_communist # If you somehow get communists and friends early
-			has_ideology = ideology:ideology_vanguardist
-			has_ideology = ideology:ideology_anarchist
-		}
+		character_is_pro_nihilism_movement = yes #Compatibility Trigger
 	}
 	character_support_weight = {
 		value = 200
@@ -4280,12 +4253,7 @@ movement_land_reform = {
 	
 	character_support_trigger = {
 		OR = {
-			has_ideology = ideology:ideology_land_reformer
-			has_ideology = ideology:ideology_luddite
-			has_ideology = ideology:ideology_anarchist
-			has_ideology = ideology:ideology_communist
-			has_ideology = ideology:ideology_vanguardist
-			has_ideology = ideology:ideology_abolitionist
+			character_is_pro_land_reform_movement = yes #Compatibility Trigger
 			is_interest_group_type = ig_rural_folk
 		}
 	}
@@ -4512,17 +4480,11 @@ movement_feminist = {
 			limit = {
 				is_in_exile_pool = yes
 			}
-			OR = {
-				has_ideology = ideology:ideology_feminist
-				has_ideology = ideology:ideology_humanitarian
-				has_ideology = ideology:ideology_reformer
-			}
+			character_is_pro_feminist_movement = yes
 		}
 		trigger_else = {
 			OR = {
-				has_ideology = ideology:ideology_feminist
-				has_ideology = ideology:ideology_humanitarian
-				has_ideology = ideology:ideology_reformer
+				character_is_pro_feminist_movement = yes
 				interest_group ?= {
 					OR = {
 						has_ideology = ideology:ideology_egalitarian_modern
@@ -4719,18 +4681,12 @@ movement_reactionary = {
 				is_in_exile_pool = yes
 			}
 			OR = {
-				has_ideology = ideology:ideology_traditionalist
-				has_ideology = ideology:ideology_protectionist
-				has_ideology = ideology:ideology_authoritarian
-				has_ideology = ideology:ideology_luddite				
+				character_is_pro_reactionary_movement = yes	#Compatibility Trigger			
 			}
 		}
 		trigger_else = {
 			OR = {
-				has_ideology = ideology:ideology_traditionalist
-				has_ideology = ideology:ideology_protectionist
-				has_ideology = ideology:ideology_authoritarian
-				has_ideology = ideology:ideology_luddite
+				character_is_pro_reactionary_movement = yes	#Compatibility Trigger	
 				interest_group ?= {
 					OR = {
 						has_ideology = ideology:ideology_reactionary
@@ -5037,22 +4993,12 @@ movement_modernizer = {
 				is_in_exile_pool = yes
 			}
 			OR = {
-				has_ideology = ideology:ideology_reformer
-				has_ideology = ideology:ideology_protectionist
-				has_ideology = ideology:ideology_positivist
-				has_ideology = ideology:ideology_abolitionist
-				has_ideology = ideology:ideology_market_liberal
-				has_ideology = ideology:ideology_sovereignist
+				character_is_pro_modernizer_movement = yes #Compatibility Trigger
 			}
 		}
 		trigger_else = {
 			OR = {
-				has_ideology = ideology:ideology_reformer
-				has_ideology = ideology:ideology_protectionist
-				has_ideology = ideology:ideology_positivist
-				has_ideology = ideology:ideology_abolitionist
-				has_ideology = ideology:ideology_market_liberal
-				has_ideology = ideology:ideology_sovereignist
+				character_is_pro_modernizer_movement = yes #Compatibility Trigger
 				interest_group ?= {
 					OR = {
 						has_ideology = ideology:ideology_modernizer
