@@ -36,9 +36,7 @@
 		religion = scope:religion
 		OR = {
 			is_interest_group_type = ig_devout
-			has_ideology = ideology:ideology_traditionalist
-			has_ideology = ideology:ideology_theocrat
-			has_ideology = ideology:ideology_integralist
+			character_is_pro_religious_majority = yes #Compatibility Trigger
 		}		
 	}
 	character_support_weight = {
@@ -304,6 +302,7 @@ movement_religious_minority = {
 	ideology = ideology_traditionalist_minoritarian	
 	character_ideologies = {
 		ideology_traditionalist_minoritarian
+		ideology_usfp_universalist #USFP
 	}
 	
 	creation_trigger = {
@@ -387,12 +386,9 @@ movement_religious_minority = {
 				owner ?= {
 					has_law = law_type:law_state_atheism
 				}
-				OR = {
-					has_ideology = ideology:ideology_traditionalist
-					has_ideology = ideology:ideology_theocrat
-				}
+				character_hates_state_atheism = yes #Compatibility Trigger
 			}
-			has_ideology = ideology:ideology_traditionalist_minoritarian
+			character_is_pro_religious_minority = yes #Compatibility Trigger
 		}		
 	}
 	character_support_weight = {
@@ -414,12 +410,9 @@ movement_religious_minority = {
 						owner ?= {
 							has_law = law_type:law_state_atheism
 						}
-						OR = {
-							has_ideology = ideology:ideology_traditionalist
-							has_ideology = ideology:ideology_theocrat
-						}
+						character_hates_state_atheism = yes #Compatibility Trigger
 					}
-					has_ideology = ideology:ideology_traditionalist_minoritarian
+					character_is_pro_religious_minority = yes #Compatibility Trigger
 				}
 			}
 			multiply = {

@@ -4,6 +4,7 @@
 	ideology = ideology_ethno_nationalist
 	character_ideologies = {	
 		ideology_ethno_nationalist
+		ideology_usfp_social_darwinist_leader
 	}
 	
 	creation_trigger = {}
@@ -16,11 +17,7 @@
 		culture = {
 			is_primary_culture_of = root.owner
 		}	
-		OR = {
-			has_ideology = ideology:ideology_fascist
-			has_ideology = ideology:ideology_jingoist_leader		
-			has_ideology = ideology:ideology_ethno_nationalist
-		}
+		character_is_pro_cultural_majority = yes #Compatibility Trigger
 	}
 	character_support_weight = {
 		value = 100

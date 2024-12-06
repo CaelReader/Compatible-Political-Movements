@@ -5,6 +5,7 @@
 	character_ideologies = {
 		ideology_abolitionist
 		ideology_humanitarian
+		ideology_usfp_abolitionist_radical #USFP
 	}
 	
 	disband_trigger = {
@@ -25,7 +26,7 @@
 	
 	character_support_trigger = {
 		OR = {
-			ideology_is_anti_slavery = yes #Compatibility Trigger
+			character_is_anti_slavery = yes #Compatibility Trigger
 			OR = {
 				is_interest_group_type = ig_intelligentsia
 				is_interest_group_type = ig_trade_unions
@@ -36,7 +37,7 @@
 		value = 200
 		if = {
 			limit = {
-				ideology_is_anti_slavery = yes #Compatibility Trigger
+				character_is_anti_slavery = yes #Compatibility Trigger
 			}
 			multiply = {
 				value = 5
@@ -394,14 +395,10 @@ movement_pro_slavery = {
 			limit = {
 				is_in_exile_pool = yes
 			}
-			has_ideology = ideology:ideology_slaver
-			has_ideology = ideology:ideology_jacksonian_democrat
+			character_is_pro_slavery = yes #Compatibility Trigger
 		}
 		trigger_else = {
-			OR = {
-				has_ideology = ideology:ideology_slaver
-				has_ideology = ideology:ideology_jacksonian_democrat
-			}
+			character_is_pro_slavery = yes #Compatibility Trigger
 			interest_group ?= {
 				has_ideology = ideology:ideology_pro_slavery
 			}
@@ -2572,14 +2569,10 @@ movement_fascist = {
 	}
 	
 	character_support_trigger = {
-		OR = {
-			has_ideology = ideology:ideology_fascist
-			has_ideology = ideology:ideology_integralist
-			has_ideology = ideology:ideology_corporatist_leader
-			has_ideology = ideology:ideology_ethno_nationalist
-		}
+		character_is_pro_fascist = yes
 	}
 	character_support_weight = {
+		value = 100 #bugfix
 		if = {
 			limit = {
 				OR = {
